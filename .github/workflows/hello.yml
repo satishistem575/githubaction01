@@ -25,3 +25,6 @@ jobs:
         needs: 
             - say-hello-world
             - say-name-world
+        steps:
+            - name: greet everyone
+              run: echo "hello to world from satish"
