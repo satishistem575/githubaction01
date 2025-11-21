@@ -1,9 +1,7 @@
 name: Hello world
 
 on:
-    push:
-        branches:
-            - main
+    workflow_dispatch:
 jobs:
     say-hello-world:
         name: say hello world
@@ -13,3 +11,17 @@ jobs:
 
             - name: echo hello world
               run: echo "hello world"
+    
+    say-name-world:
+        name: say hello world with name
+        runs-on: ubuntu-latest
+        steps:
+            - name: echo name
+              run: echo "satish"
+    
+    greet-everyone:
+        name: greet everyone
+        runs-on: ubuntu-latest
+        needs: 
+            - say-hello-world
+            - say-name-world
