@@ -45,5 +45,5 @@ jobs:
             - greet-satish
         steps:
             - name: run 2+2
-              run: 4+4
+              run: print(4+4)
               shell: python
