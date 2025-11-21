@@ -28,3 +28,22 @@ jobs:
         steps:
             - name: greet everyone
               run: echo "hello to world from satish"
+    greet-satish:
+        name: greet satish
+        runs-on: ubuntu-latest
+        needs:
+            - say-hello-world
+            - say-name-world
+        steps:
+            - name: greet satish
+              run: echo "hello satish"
+    do-calculation:
+        name: do addition
+        runs-on: ubuntu-latest
+        needs:
+            - greet-everyone
+            - greet-satish
+        steps:
+            - name: run 2+2
+              run: 4+4
+              shell: python
